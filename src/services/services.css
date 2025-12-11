@@ -1,0 +1,235 @@
+/* =======================
+   Секция услуг
+   ======================= */
+
+.service {
+  width: 100%;
+  height: 130vh;
+}
+
+.service__inner {
+  width: 100%;
+  height: 100%;
+}
+
+.service__title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service__title > h2 {
+  text-transform: uppercase;
+  font-size: var(--h2-fsz);
+  font-family: var(--Roboto);
+  color: var(--h-color);
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =======================
+   Карточка тарифа
+   ======================= */
+
+.card {
+  width: 320px;
+  height: 550px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  padding: 15px 20px;
+  transition: all 0.3s;
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.12),
+    0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card > * {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 30px 90px rgba(71, 189, 240, 0.18),
+    0 12px 30px rgba(25, 77, 200, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+/* =======================
+   Контент внутри карточки
+   ======================= */
+
+.card__title {
+  font-family: var(--Roboto);
+  text-transform: uppercase;
+  font-weight: 750;
+  letter-spacing: 5px;
+  font-size: 26px;
+}
+
+.card__dsc {
+  width: 100%;
+  height: 80px;
+  font-family: var(--text-ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card__dsc > p {
+  margin: 0;
+  text-align: center;
+}
+
+/* =======================
+   Список услуг в карточке
+   ======================= */
+
+.list {
+  width: 100%;
+  height: 40%;
+}
+
+.list > ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-wrap: balance;
+}
+
+.list > ul > li {
+  margin-top: 15px;
+  font-family: var(--text-ff);
+  font-size: 11.5px;
+}
+
+/* =======================
+   Кнопка выбора тарифа
+   ======================= */
+
+.service__btn-none {
+  display: none; /* скрываем input */
+}
+
+.service__btn {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  font-family: var(--Roboto);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  background: -webkit-linear-gradient(90deg, #47bdf0, #194dc8, #d632ec);
+  background: linear-gradient(90deg, #47bdf0, #194dc8, #d632ec);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.service__btn:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 35px 100px rgba(71, 189, 240, 0.22),
+    0 18px 45px rgba(25, 77, 200, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+/* Базовые стили можно оставить как есть */
+
+/* === Планшеты и ниже (до 768px) === */
+@media (max-width: 768px) {
+  .service {
+    height: auto;              /* не фиксируем высоту экрана */
+    padding: 20px 0;
+  }
+
+  .service__inner {
+    height: auto;
+  }
+
+  .wrapper {
+    flex-direction: column;    /* карточки в столбик */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;                 /* расстояние между карточками */
+  }
+
+  .card {
+    width: 90%;                /* почти на всю ширину экрана */
+    max-width: 360px;
+    height: auto;              /* высота по контенту */
+    min-height: 480px;
+  }
+
+  .card__title {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .card__dsc {
+    height: auto;
+    min-height: 60px;
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .list > ul > li {
+    font-size: 12px;
+  }
+
+  .service__btn {
+    width: 140px;
+    height: 46px;
+    font-size: 18px;
+  }
+}
+
+/* === Маленькие мобильные (до 480px) === */
+@media (max-width: 480px) {
+  .service__title > h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .card {
+    width: 95%;
+    padding: 12px 14px;
+    min-height: 450px;
+  }
+
+  .card__title {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .list > ul > li {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+
+  .service__btn {
+    width: 130px;
+    height: 44px;
+    font-size: 16px;
+  }
+}

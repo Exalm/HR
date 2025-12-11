@@ -1,0 +1,184 @@
+/* Исходные стили — без изменений */
+.stage {
+}
+
+.stage__h {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.steps {
+  width: 100%;
+  height: 175vh;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stage__h > h2 {
+  text-transform: uppercase;
+  font-family: var(--Roboto);
+  font-size: var(--h2-fsz);
+  color: var(--h-color);
+}
+
+.Stage__Step {
+  width: 100%;
+  height: 175px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.Stage__Step--even {
+  width: 100%;
+  height: 175px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Stage__Step:not(.Stage__Step--even) {
+  justify-content: flex-start;
+}
+
+.stageStep__wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 800px;
+}
+
+.stageStep__num svg {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.stageStep__out {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stageStep__dsc {
+  width: 90%;
+  color: var(--text-color);
+  font-family: var(--text-ff);
+  font-size: var(--p-fsz);
+}
+
+.stageStep__h {
+  color: var(--h-color);
+  font-family: var(--Roboto);
+  font-size: var(--h3-fsz);
+  text-transform: uppercase;
+}
+
+/* ✅ Адаптив: планшеты и мобилки */
+@media (max-width: 768px) {
+  .steps {
+    height: auto;                /* вместо 175vh */
+    margin-top: 40px;
+    gap: 25px;
+  }
+
+  .Stage__Step,
+  .Stage__Step--even {
+    height: auto;                /* вместо 175px */
+    padding: 0 0 0 10px;
+    justify-content: flex-start; /* убираем шахматку на моб */
+  }
+
+  .stageStep__wrap {
+    height: auto;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .stageStep__num svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stageStep__out {
+    gap: 6px;
+  }
+
+  .stageStep__h {
+    font-size: clamp(18px, 3.5vw, 22px);
+  }
+
+  .stageStep__dsc {
+    width: 100%;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.5;
+  }
+}
+
+/* ✅ Мобильные ~375–480px */
+@media (max-width: 480px) {
+  .stage__h > h2 {
+    font-size: clamp(24px, 7vw, 28px);
+    text-align: center;
+  }
+
+  .steps {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .Stage__Step,
+  .Stage__Step--even {
+    padding: 0 5px;
+  }
+
+  .stageStep__wrap {
+    gap: 15px;
+  }
+
+  .stageStep__num svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .stageStep__dsc {
+    font-size: 14px;
+  }
+}
+
+/* ✅ Узкие экраны 320px */
+@media (max-width: 320px) {
+  .steps {
+    margin-top: 25px;
+    gap: 18px;
+  }
+
+  .Stage__Step,
+  .Stage__Step--even {
+    padding: 0;
+  }
+
+  .stageStep__wrap {
+    gap: 12px;
+  }
+
+  .stageStep__num svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stageStep__h {
+    font-size: 16px;
+  }
+
+  .stageStep__dsc {
+    font-size: 13px;
+  }
+}

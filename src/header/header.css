@@ -1,0 +1,573 @@
+.header__up {
+  width: 100%;
+  height: 60px;
+  margin: 50px auto 0 auto;
+  border-radius: 50px;
+  background: var(--header-bg-menu);
+}
+
+.header__up {
+  position: sticky;
+}
+
+.nav,
+.nav > ul {
+  width: 100%;
+  height: inherit;
+  margin: 0 auto;
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+}
+
+.nav__li > a {
+  gap: 15px;
+  text-transform: uppercase;
+  font-family: var(--Inter);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.nav__li > a:hover {
+  color: var(--link-color-active);
+  transform: scale(1.08);
+}
+
+.header__down {
+  margin-top: 50px;
+  width: 100%;
+  height: 55vh;
+}
+
+.header__down-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__text {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header__title > h1 {
+  font-family: var(--Roboto);
+  line-height: 45px;
+  color: var(--h-color);
+}
+
+.header__dsc > p {
+  font-size: 24px;
+  font-family: var(--Roboto);
+  line-height: 25px;
+  color: var(--dsc-color);
+}
+
+.header__btn {
+    width: 150px;
+    height: 50px;
+    background-color: var(--btn-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: var(--Roboto);
+    border-radius: 25px;
+    color: var(--btn-text-color);
+    transition: all .3s;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#signup {
+    display: none;
+}
+
+.header__btn:hover {
+    background-color: var(--btn-color-active);
+    transform: scale(1.08);
+}
+
+.header__img {
+    width: 600px;
+}
+
+/* ✅ НОВОЕ: БУРГЕР МЕНЮ */
+.burger-btn {
+  display: none; /* скрыто на десктопе */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.burger-btn span {
+  height: 3px;
+  background: var(--h-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+
+
+/* ✅ МОБИЛЬНЫЕ - ТВОИ СТИЛИ НЕ ТРОГАЮТСЯ */
+/* Базовые стили для мобильных (до 480px) */
+@media (max-width: 480px) {
+  .header__up {
+    height: 55px;
+    margin-top: 25px;
+    padding: 0 15px;
+    background: none;
+  }
+
+  .burger-btn {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .nav > ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(80, 111, 133, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav--open > ul {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__li > a {
+    font-size: 24px !important;
+    color: white !important;
+    padding: 12px 20px;
+    text-align: center;
+    display: block;
+  }
+
+  .nav--open .burger-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav--open .burger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav--open .burger-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .header__down {
+    height: 75vh;
+    margin-top: 30px;
+  }
+
+  .header__down-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .header__text {
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .header__title h1 {
+    font-size: clamp(24px, 6vw, 32px);
+    line-height: 1.3;
+  }
+
+  .header__dsc p {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .header__img {
+    display: none;
+  }
+}
+
+/* Для узких экранов от 481px до 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .burger-btn {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .header__up {
+    background: none;
+  }
+
+  .nav > ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 30px;
+    margin: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav--open > ul {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__li > a {
+    font-size: 28px !important;
+    color: white !important;
+    padding: 14px 30px;
+    text-align: center;
+  }
+
+  .nav--open .burger-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav--open .burger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav--open .burger-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .header__down {
+    height: 30vh;
+    margin-top: 35px;
+  }
+
+  .header__down-inner {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .header__text {
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .header__title h1 {
+    font-size: clamp(28px, 7vw, 36px);
+    line-height: 1.2;
+  }
+
+  .header__dsc p {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+
+  .header__img {
+    display: none;
+  }
+}
+
+/* Для планшетов и мелких ноутбуков (769px - 1024px) */
+/* Основные стили не трогаем */
+
+/* Мобильные до 480px */
+@media (max-width: 480px) {
+  .header__up {
+    height: 55px;
+    margin-top: 25px;
+    padding: 0 15px;
+    background: none;
+  }
+
+  .burger-btn {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .nav > ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(80, 111, 133, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav--open > ul {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__li > a {
+    font-size: 24px !important;
+    color: white !important;
+    padding: 12px 20px;
+    text-align: center;
+    display: block;
+  }
+
+  .nav--open .burger-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav--open .burger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav--open .burger-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .header__down {
+    height: 75vh;
+    margin-top: 30px;
+  }
+
+  .header__down-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .header__text {
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;               /* Центрируем содержимое */
+  }
+
+  .header__btn {
+    width: 80%;                        /* Чтобы не была слишком узкой */
+    max-width: 300px;
+    margin: 20px 0 0 0;
+  }
+
+  .header__title h1 {
+    font-size: clamp(24px, 6vw, 32px);
+    line-height: 1.3;
+  }
+
+  .header__dsc p {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .header__img {
+    display: none;
+  }
+}
+
+/* Узкие экраны от 481 до 768 */
+@media (min-width: 481px) and (max-width: 768px) {
+  .burger-btn {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .header__up {
+    background: none;
+  }
+
+  .nav > ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 30px;
+    margin: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav--open > ul {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__li > a {
+    font-size: 28px !important;
+    color: white !important;
+    padding: 14px 30px;
+    text-align: center;
+  }
+
+  .nav--open .burger-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav--open .burger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav--open .burger-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .header__down {
+    height: 30vh;
+    margin-top: 35px;
+  }
+
+  .header__down-inner {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .header__text {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;               /* Центрируем содержимое */
+  }
+
+  .header__btn {
+    width: 60%;
+    max-width: 300px;
+    margin: 20px 0 0 0;
+  }
+
+  .header__title h1 {
+    font-size: clamp(28px, 7vw, 36px);
+    line-height: 1.2;
+  }
+
+  .header__dsc p {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+
+  .header__img {
+    display: none;
+  }
+}
+
+/* Планшеты и мелкие ноуты 769px-1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .burger-btn {
+    display: none;
+    margin: 0 auto;
+  }
+
+  .nav > ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .header__down-inner {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .header__text {
+    width: 50%;
+    padding: 0 15px;
+    display: flex;               /* flex */
+    flex-direction: column;      /* вертикально */
+    justify-content: center;     /* по вертикали */
+    align-items: center;         /* по горизонтали */
+  }
+
+  .header__btn {
+    margin: 20px 0 0 0;
+    width: auto;
+    min-width: 150px;
+    align-self: center;
+  }
+
+  .header__img {
+    width: 400px;
+    display: block;
+  }
+
+  .header__title h1 {
+    font-size: 36px;
+  }
+
+  .header__dsc p {
+    font-size: 20px;
+  }
+}
+
+
+

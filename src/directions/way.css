@@ -1,0 +1,273 @@
+/* === Основные стили контейнера и заголовков === */
+.way {
+  width: 100%;
+  height: 105vh; /* Высота почти на весь экран по высоте окна */
+  padding: 20px 0; /* Вертикальные отступы */
+}
+
+.way__h {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Центрирование заголовка по горизонтали */
+}
+
+.way__h > h2 {
+  color: var(--h-color); /* Цвет из переменной */
+  font-family: var(--Roboto); /* Шрифт из переменной */
+  font-size: var(--h3-fsz); /* Размер шрифта из переменной */
+  text-transform: uppercase; /* Верхний регистр */
+}
+
+/* === Основная обёртка для карточек, отвечает за расположение === */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  flex-wrap: wrap; /* Перенос элементов при нехватке места */
+  padding: 20px 40px; /* Внутренние отступы */
+  margin-top: 25px; /* Отступ сверху */
+  gap: 30px; /* Расстояние между карточками */
+}
+
+/* === Карточки (элементы пути) === */
+.wayItem {
+  width: clamp(320px, 90%, 450px); /* Адаптивная ширина с минимумом и максимумом */
+  height: 175px; /* Фиксированная высота */
+  border-radius: 15px; /* Скругление углов */
+  box-sizing: border-box; /* Включаем паддинги и бордеры в размер */
+}
+
+/* Заголовок карточки */
+.wayH {
+  height: 50px; /* Фиксированная высота */
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  border-radius: 10px;
+  font-weight: 900;
+  box-sizing: border-box;
+}
+
+/* Описание карточки — основной контент */
+.WayDsc {
+  width: 100%;
+  height: calc(100% - 50px); /* Высота с учётом заголовка */
+  display: flex;
+  justify-content: space-between; /* Распределение контента по ширине */
+  align-items: center; /* Центрирование по вертикали */
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Список внутри описания карточки */
+.WayDsc > ul {
+  height: 100%; /* Занимает всю высоту контейнера */
+  list-style: none; /* Убираем стандартные маркеры */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение пунктов */
+  justify-content: space-between; /* Равномерное распределение по высоте */
+  margin: 0;
+  padding: 0;
+}
+
+/* Элементы списка */
+.WayDsc > ul > li {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: var(--text-ff);
+}
+
+/* Добавление тире перед каждым пунктом списка */
+.WayDsc > ul > li::before {
+  content: "–";
+  padding-right: 5px;
+}
+
+/* === Цвета карточек и их описаний === */
+.wrapper > #analytics {
+  background-color: #a4d3a2;
+}
+
+#analytics > .WayDsc {
+  background-color: #b8e5be;
+}
+
+.wrapper > #development {
+  background-color: #d6a5a5;
+}
+
+#development > .WayDsc {
+  background-color: #e9b7bd;
+}
+
+.wrapper > #cybersecurity {
+  background-color: #595959;
+}
+
+#cybersecurity > .WayDsc {
+  background-color: #92bcbc;
+}
+
+.wrapper > #Data {
+  background-color: #9573c5;
+}
+
+#Data > .WayDsc {
+  background-color: #d5a9d6;
+}
+
+/* === Адаптивность: стили для экранов max-width 768px и меньше === */
+@media (max-width: 768px) {
+  .way {
+    height: auto; /* Автоматическая высота */
+    min-height: 60vh; /* Минимальная высота */
+    padding: 25px 15px;
+    margin-top: 120px;
+  }
+  
+  .way__h > h2 {
+    font-size: clamp(24px, 8vw, 32px); /* Адаптивный размер заголовка */
+  }
+  
+  .wrapper {
+    flex-direction: column !important; /* Вертикальное расположение */
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .wayItem {
+    width: 100%;
+    max-width: 380px;
+    height: 160px; /* Исправленная фиксированная высота */
+  }
+  
+  .wayH {
+    height: 45px;
+    font-size: 13px;
+  }
+  
+  .WayDsc {
+    height: calc(100% - 45px); /* Подгонка высоты после изменения высоты заголовка */
+    padding: 12px 15px;
+    gap: 8px;
+  }
+  
+  .WayDsc > ul {
+    height: 100%;
+    justify-content: space-between;
+  }
+  
+  .WayDsc > ul > li {
+    font-size: 13px;
+    line-height: 1.3;
+    margin: 0;
+  }
+  
+  .WayDsc img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}
+
+/* === Адаптивность для еще меньших экранов === */
+@media (max-width: 480px) {
+  .way {
+    padding: 20px 12px;
+  }
+  
+  .way__h > h2 {
+    font-size: 22px;
+  }
+  
+  .wayItem {
+    height: 150px;
+  }
+  
+  .wayH {
+    height: 42px;
+    font-size: 12px;
+  }
+  
+  .WayDsc {
+    height: calc(100% - 42px);
+    padding: 10px 12px;
+  }
+  
+  .WayDsc > ul > li {
+    font-size: 12px;
+  }
+  
+  .WayDsc img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 375px) {
+  .way {
+    padding: 18px 10px;
+  }
+  
+  .wrapper {
+    gap: 18px;
+    padding: 12px 10px;
+  }
+  
+  .wayItem {
+    height: 145px;
+  }
+  
+  .wayH {
+    height: 40px;
+    font-size: 11.5px;
+  }
+  
+  .WayDsc {
+    height: calc(100% - 40px);
+    padding: 10px 12px;
+  }
+  
+  .WayDsc > ul > li {
+    font-size: 11.5px;
+  }
+  
+  .WayDsc img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 320px) {
+  .way__h > h2 {
+    font-size: 20px;
+  }
+  
+  .wayItem {
+    height: 140px;
+  }
+  
+  .wayH {
+    height: 38px;
+    font-size: 11px;
+  }
+  
+  .WayDsc {
+    height: calc(100% - 38px);
+    padding: 8px 10px;
+  }
+  
+  .WayDsc > ul > li {
+    font-size: 11px;
+  }
+  
+  .WayDsc img {
+    width: 40px;
+    height: 40px;
+  }
+}

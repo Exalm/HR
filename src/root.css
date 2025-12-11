@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* header */
+  --header-bg-menu: #eff5f7;
+
+  /* header-link */
+  --link-color: #8ac5ef;
+  --link-color-active: #7ed321;
+
+  /*text */
+  --h-color: #3b5998;
+  --dsc-color: #6daedf;
+  --text-color: #333;
+
+  /* btn */
+  --btn-bg-color: #8ac5ef;
+  --btn-text-color: #f5f5f5;
+  --btn-color-active: #7ed321;
+
+  /* fonts */
+  --Inter: "Inter", sans-serif;
+  --Roboto: "Roboto", sans-serif;
+  --text-ff: "Comfortaa", sans-serif;
+
+  /* body */
+  --bg-body: #eaf6fd;
+
+  /* font-size */
+  --h2-fsz: 48px;
+  --h3-fsz: 32px;
+  --p-fsz: 20px;
+}

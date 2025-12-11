@@ -1,0 +1,52 @@
+/* АНИМАЦИЯ ВСПЛЫВАНИЯ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ИНИЦИАЛЬНОЕ состояние - НЕВИДИМО */
+section, .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* АКТИВНОЕ состояние - при попадании в зону видимости */
+section.animate, .animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ПРИМЕНЯЕМ К ВСЕМ БЛОКАМ И ЭЛЕМЕНТАМ */
+header, .about, .why, .way, .directions, .service, .contact,
+.wayItem, h1, h2, h3, ul, p, img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header.animate, .about.animate, .why.animate, .way.animate,
+.directions.animate, .service.animate, .contact.animate,
+.wayItem.animate, h1.animate, h2.animate, h3.animate,
+ul.animate, p.animate, img.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ЗАДЕРЖКИ ДЛЯ КАРТОЧЕК wayItem (0.1s шаг) */
+.wayItem:nth-child(1) { transition-delay: 0.1s; }
+.wayItem:nth-child(2) { transition-delay: 0.2s; }
+.wayItem:nth-child(3) { transition-delay: 0.3s; }
+.wayItem:nth-child(4) { transition-delay: 0.4s; }
+
+
+
+
+
+
