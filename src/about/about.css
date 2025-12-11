@@ -170,9 +170,11 @@
 }
 
 @media (max-width: 320px) {
+  .about  {
+    background: #000;
+  }
 
   .about__title {
-    margin-top: 50px;
     margin-bottom: 25px;
   }
 
