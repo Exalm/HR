@@ -20,7 +20,8 @@ a   {
 }
 
 section {
-    margin-top: 50px;
+    height: auto;
+    margin-top: 75px;
 }
 
 .container  {
