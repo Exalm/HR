@@ -90,14 +90,15 @@
 
   .about__wrap {
     height: auto; /* убираем фиксированную высоту */
+    min-height: 0;
     gap: 40px;
     align-items: center;
   }
 
   .who {
-    width: 100% !important; /* полный ширину */
+    width: 100% !important;
     height: auto;
-    min-height: 250px;
+    min-height: 0px;
     text-align: center;
   }
 
@@ -113,6 +114,7 @@
   .plus {
     width: 100% !important; /* полный ширину */
     height: auto;
+    min-height: 0;
     max-width: 500px;
   }
 
@@ -140,22 +142,20 @@
 
 @media (max-width: 480px) {
   .about {
-    padding: 0 15px;
+    height: auto !important;
+    min-height: 280px !important;
+    padding: 20px 16px !important;
   }
 
   .who__title,
   .plus__title {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .about__title h2 {
-    font-size: clamp(24px, 8vw, 32px);
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   .who {
-    min-height: 220px;
+    height: auto;
+    min-height: 0px;
   }
 
   .who__dsc p {
@@ -170,9 +170,6 @@
 }
 
 @media (max-width: 320px) {
-  .about__title h2 {
-    font-size: 22px;
-  }
 
   .about__title {
     margin-top: 50px;
@@ -181,7 +178,6 @@
 
   .who__title,
   .plus__title {
-    font-size: 18px;
     margin-top: 10px;
     margin-bottom: 10px;
   }

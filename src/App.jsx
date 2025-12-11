@@ -8,7 +8,7 @@ import Header from './header/header'
 import About from './about/about'
 import Why from './why/why'
 import Stage from './stage/stage'
-import Way from './directions/directions.jsx'
+import Direction from './directions/directions.jsx'
 import Service from './services/services'
 import Contact from './contacts/contact'
 
@@ -23,7 +23,7 @@ export default function App() {
       <About />
       <Why />
       <Stage />
-      <Way />
+      <Direction />
       <Service />
       <Contact />
     </>

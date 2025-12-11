@@ -1,14 +1,16 @@
 /* === Основные стили контейнера и заголовков === */
 .way {
   width: 100%;
-  height: 105vh; /* Высота почти на весь экран по высоте окна */
+  height: auto;
+  min-height: 0;
   padding: 20px 0; /* Вертикальные отступы */
 }
 
 .way__h {
   width: 100%;
   display: flex;
-  justify-content: center; /* Центрирование заголовка по горизонтали */
+  justify-content: center;
+  gap: 50px;
 }
 
 .way__h > h2 {
@@ -121,7 +123,7 @@
 @media (max-width: 768px) {
   .way {
     height: auto; /* Автоматическая высота */
-    min-height: 60vh; /* Минимальная высота */
+    min-height: 0; /* Минимальная высота */
     padding: 25px 15px;
     margin-top: 120px;
   }

@@ -1,9 +1,9 @@
 import React from 'react'
-import './way.css'
+import './direction.css'
 import WayItem from './wayItem'
 import data from './data'
 
-export default function Way() {
+export default function Direction() {
     return (
         <section className="way animate-on-scroll" id='directions'>
             <div className="way__h">

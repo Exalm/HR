@@ -29,7 +29,7 @@
   --bg-body: #eaf6fd;
 
   /* font-size */
-  --h2-fsz: 48px;
-  --h3-fsz: 32px;
-  --p-fsz: 20px;
+  --h2-fsz: clamp(32px, 6vw, 48px);
+  --h3-fsz: clamp(24px, 4.5vw, 32px);
+  --p-fsz: clamp(16px, 3vw, 20px);
 }
