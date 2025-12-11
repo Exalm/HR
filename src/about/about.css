@@ -1,7 +1,6 @@
-/* ТВОИ ИСХОДНЫЕ СТИЛИ - БЕЗ ИЗМЕНЕНИЙ */
 .about {
   width: 100vw;
-  height: 120vh;
+  height: 100%;
 }
 
 .about__title {
@@ -165,10 +164,6 @@
 }
 
 @media (max-width: 320px) {
-  .about {
-    height: 170vh;
-  }
-  
   .about__title h2 {
     font-size: 22px;
   }
